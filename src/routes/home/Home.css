@@ -1,0 +1,10 @@
+.root {
+  color: green;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  background-image: url('./test.jpg');
+  background-size: contain;
+}

@@ -1,0 +1,14 @@
+{
+  "client": [
+    "/assets/vendors.chunk.js",
+    "/assets/client.js"
+  ],
+  "home": [
+    "/assets/home.css",
+    "/assets/home.chunk.js",
+    "/home.5f66ac272ca329b97a2e.hot-update.js"
+  ],
+  "about": [
+    "/assets/about.chunk.js"
+  ]
+}
