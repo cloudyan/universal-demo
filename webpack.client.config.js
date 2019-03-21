@@ -37,7 +37,7 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     filename: 'assets/[name].js',
-    publicPath: './',
+    publicPath: '/', // 使用子目录就留空，不要使用 '/'
     // publicPath: 'http://cdn.cn/',
     chunkFilename: 'assets/[name].chunk.js',
   },
