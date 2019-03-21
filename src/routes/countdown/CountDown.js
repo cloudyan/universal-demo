@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './countdown.less'
 const parseTime = function (strTime) {
   if(!strTime) return 0;
   // let tt = strTime.split(/\D+/g);
@@ -81,7 +81,8 @@ class CountDown extends React.Component {
       margin: '5px',
       'fontWeight': 'bold',
     }
-    return (<div style={_root_style}>
+    // https://facebook.github.io/create-react-app/docs/adding-a-css-modules-stylesheet
+    return (<div style={_root_style} className="test">
       距活动结束仅剩<i style={_time_style}>{day}</i>天<i style={_time_style}>{hour}</i>时<i style={_time_style}>{minute}</i>分<i style={_time_style}>{second}</i>秒
             </div>);
   }

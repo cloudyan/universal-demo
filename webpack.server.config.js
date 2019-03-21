@@ -51,11 +51,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|less)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-          }, {
+          },
+          {
             loader: "css-loader",
             options: {
               sourceMap: false,
@@ -64,6 +65,9 @@ module.exports = {
               exportOnlyLocals: true,
             }
           },
+          {
+            loader: 'less-loader' // compiles Less to CSS
+          }
         ]
       },
       {
