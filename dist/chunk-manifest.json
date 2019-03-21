@@ -1,14 +1,17 @@
 {
   "client": [
-    "/assets/vendors.chunk.js",
-    "/assets/client.js"
+    "assets/vendors.chunk.js",
+    "assets/client.js",
+    "client.53aa440dc899f619ac6e.hot-update.js"
   ],
   "home": [
-    "/assets/home.css",
-    "/assets/home.chunk.js",
-    "/home.5f66ac272ca329b97a2e.hot-update.js"
+    "assets/home.css",
+    "assets/home.chunk.js"
   ],
   "about": [
-    "/assets/about.chunk.js"
+    "assets/about.chunk.js"
+  ],
+  "countdown": [
+    "assets/countdown.chunk.js"
   ]
 }

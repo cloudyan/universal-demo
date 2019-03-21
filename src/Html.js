@@ -2,7 +2,7 @@ import React from 'react'
 
 class Html extends React.Component {
   render() {
-    const { title, styles, scripts, app, children } = this.props
+    const { title, styles, scripts, app, children, insertVar } = this.props
     return <html className="no-js" lang="en">
       <head>
         <meta charSet="utf-8" />
@@ -15,6 +15,7 @@ class Html extends React.Component {
         {styles.map(style => (
           <link key={style} rel="stylesheet" href={style} />
         ))}
+        <script dangerouslySetInnerHTML={{ __html: insertVar }}></script>
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: children }} />

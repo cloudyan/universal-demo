@@ -4,8 +4,10 @@ import App from './components/App';
 import router from './router';
 
 async function clientRender() {
+  // const moduleName = '/countdown';
   const context = {
-    path: location.pathname,
+    // path: location.pathname,
+    path: window.moduleName,
   }
   const route = router(context)
   let content = {}

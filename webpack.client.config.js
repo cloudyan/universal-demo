@@ -23,6 +23,7 @@ const resolve = {
 module.exports = {
   context: ROOT_DIR,
   mode: 'development',
+  // mode: 'production',
   devtool: 'cheap-module-inline-source-map',
   name: 'client',
   resolve,
@@ -36,7 +37,8 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     filename: 'assets/[name].js',
-    publicPath: 'http://cdn.cn/',
+    publicPath: './',
+    // publicPath: 'http://cdn.cn/',
     chunkFilename: 'assets/[name].chunk.js',
   },
   optimization: {
@@ -144,6 +146,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       __isClient__: true,
+      __DEV__: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({

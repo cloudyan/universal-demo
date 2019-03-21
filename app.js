@@ -9,6 +9,7 @@ const webpackHotMiddleware = require('./middlewares/webpackHotMiddleware');
 const app = new Koa();
 
 const multiCompiler = webpack([clientWebpackconfig, serverWebpackconfig]);
+// const multiCompiler = webpack([serverWebpackconfig]);
 const clientCompiler = multiCompiler.compilers.find(
   compiler => compiler.name === 'client',
 );
@@ -18,6 +19,7 @@ const serverCompiler = multiCompiler.compilers.find(
 
 app.use(webpackDevMiddleware(clientCompiler, {
   publicPath: '/',
+  writeToDisk: true,
 }));
 app.use(webpackDevMiddleware(serverCompiler, {
   writeToDisk: true,
@@ -32,13 +34,16 @@ serverCompiler.hooks.done.tap('server', stats => {
 
 app.use(async function (ctx) {
   const serverRender = require('./dist/server');
+
+  // 配置渲染的模块即可
+  ctx = { path: '/countdown' };
   const html = await serverRender.default(ctx)
 
   ctx.body = `<!DOCTYPE html>${html}`
 });
 
-app.listen(3000, function () {
-  console.log(`app start: http://localhost:3000`)
+app.listen(3001, function () {
+  console.log(`app start: http://localhost:3001`)
 });
 
 function purgeCache(moduleName) {

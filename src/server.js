@@ -9,6 +9,13 @@ async function serverRender(ctx) {
   const styles = new Set();
   const scripts = new Set();
 
+  // console.log(ctx);
+  const moduleName = '/countdown';
+  // ctx = moduleName;
+  // ctx = {
+  //   path: moduleName,
+  // };
+
   const addChunk = chunk => {
     if (manifest[chunk]) {
       manifest[chunk]
@@ -32,12 +39,15 @@ async function serverRender(ctx) {
 
   if (content.chunk) addChunk(content.chunk);
   if (content.chunks) content.chunks.forEach(addChunk);
-  
+
+  const insertVar = `window.moduleName = '${moduleName}';`;
+
   const data = {
     styles: Array.from(styles),
     scripts: Array.from(scripts),
     title: content.title,
     app: {},
+    insertVar,
     children: ReactDOMServer.renderToString(<App>
       {
         content.component

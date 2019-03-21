@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './Home';
+import CountDown from './CountDown';
 
 async function controller() {
   /**
@@ -9,13 +9,13 @@ async function controller() {
   await new Promise(resolve => {
     setTimeout(() => {
       resolve(2)
-    }, 1000)
+    }, 500)
   })
 
   return {
-    title: 'universal',
-    chunks: ['home'],
-    component: <Home />,
+    title: 'countdown page',
+    chunks: ['countdown'],
+    component: <CountDown />,
   }
 }
 

@@ -14,12 +14,14 @@ class Home extends React.Component {
 
   componentWillMount() {
     if (__isClient__) {
-      
+
     }
   }
 
   componentDidMount() {
-
+    setInterval(() => {
+      console.log(11111);
+    }, 2000)
   }
 
   render() {
