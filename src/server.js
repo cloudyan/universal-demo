@@ -10,7 +10,8 @@ async function serverRender(ctx) {
   const scripts = new Set();
 
   // console.log(ctx);
-  const moduleName = '/countdown';
+  const moduleName = ctx.path;
+  // const moduleName = '/countdown';
   // ctx = moduleName;
   // ctx = {
   //   path: moduleName,

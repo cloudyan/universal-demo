@@ -36,8 +36,8 @@ app.use(async function (ctx) {
   const serverRender = require('./dist/server');
 
   // 配置渲染的模块即可
-  ctx = { path: '/countdown' };
-  const html = await serverRender.default(ctx)
+  // ctx = { path: '/countdown' };
+  const html = await serverRender.default({ path: '/countdown' })
 
   ctx.body = `<!DOCTYPE html>${html}`
 });

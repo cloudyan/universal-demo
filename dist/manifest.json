@@ -1,9 +1,0 @@
-{
-  "about.js": "assets/about.chunk.js",
-  "assets/test.jpg": "assets/test.jpg",
-  "client.js": "assets/client.js",
-  "countdown.js": "assets/countdown.chunk.js",
-  "home.css": "assets/home.css",
-  "home.js": "assets/home.chunk.js",
-  "vendors.js": "assets/vendors.chunk.js"
-}
