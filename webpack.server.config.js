@@ -68,7 +68,14 @@ module.exports = {
           {
             loader: 'less-loader' // compiles Less to CSS
           },
-          { loader: 'postcss-loader' },
+          {
+            loader: 'postcss-loader', options: {
+              sourceMap: true,
+              config: {
+                path: 'postcss.config.js' // 这个必须是这个名字
+              },
+            }
+          },
         ]
       },
       {
